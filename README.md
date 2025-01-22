@@ -50,21 +50,21 @@ Monitor the logs in logs/trading_bot.log
 ## Components
 Data Collection
 
-blockchain_collector.py: Fetches on-chain data from Solana using Web3
-price_collector.py: Retrieves price data from exchanges
-processor.py: Processes and combines different data sources
+- blockchain_collector.py: Fetches on-chain data from Solana using Web3
+- price_collector.py: Retrieves price data from exchanges
+- processor.py: Processes and combines different data sources
 
 ## Model
 
-feature_engineering.py: Creates features from raw data
-model.py: Defines the machine learning model architecture
-trainer.py: Handles model training and validation
+- feature_engineering.py: Creates features from raw data
+- model.py: Defines the machine learning model architecture
+- trainer.py: Handles model training and validation
 
 ## Trading
 
-exchange.py: Manages exchange interactions
-position_manager.py: Handles trade execution and position tracking
-risk_manager.py: Implements risk management strategies
+- exchange.py: Manages exchange interactions
+- position_manager.py: Handles trade execution and position tracking
+- risk_manager.py: Implements risk management strategies
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
