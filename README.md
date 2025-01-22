@@ -1,4 +1,4 @@
-# predict.sol
+# predict.sol Version 0.0.1
 A Data Driven Platform for Automated Solana Trading
 
 ## Solana Trading Bot
