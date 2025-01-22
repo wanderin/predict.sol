@@ -1,0 +1,76 @@
+# Trading Bot Configuration
+
+# Exchange settings
+exchange:
+  name: "binance"  # or other exchanges that support Solana
+  api_key: "your_api_key_here"
+  api_secret: "your_api_secret_here"
+  trading_pairs:
+    - "SOL/USDT"
+    - "SOL/USDC"
+
+# Data collection settings
+data:
+  blockchain:
+    rpc_endpoint: "https://api.mainnet-beta.solana.com"
+    metrics:
+      - "transaction_count"
+      - "active_stakes"
+      - "token_transfers"
+      - "defi_tvl"
+    update_interval: 300  # seconds
+  
+  price:
+    timeframes:
+      - "1m"
+      - "5m"
+      - "15m"
+      - "1h"
+    lookback_period: 1000  # number of candles
+    update_interval: 60  # seconds
+
+# Model settings
+model:
+  type: "lightgbm"
+  features:
+    - "price_momentum"
+    - "volume_momentum"
+    - "transaction_momentum"
+    - "stake_changes"
+    - "tvl_changes"
+  training:
+    train_size: 0.8
+    validation_size: 0.2
+    batch_size: 64
+    epochs: 100
+    learning_rate: 0.001
+  prediction:
+    threshold: 0.65  # minimum probability for trade execution
+    horizon: "1h"    # prediction timeframe
+
+# Trading settings
+trading:
+  position_size: 0.1  # fraction of portfolio per trade
+  max_positions: 3    # maximum concurrent positions
+  stop_loss: 0.02    # 2% stop loss
+  take_profit: 0.04  # 4% take profit
+  trailing_stop: true
+  trailing_distance: 0.01  # 1% trailing stop distance
+
+# Risk management
+risk:
+  max_daily_loss: 0.05  # 5% maximum daily loss
+  max_drawdown: 0.15    # 15% maximum drawdown
+  max_leverage: 2       # maximum leverage
+  position_sizing:
+    kelly_fraction: 0.5  # fraction of Kelly criterion to use
+    risk_per_trade: 0.01  # 1% risk per trade
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/trading_bot.log"
+  telegram:
+    enabled: false
+    bot_token: "your_telegram_bot_token"
+    chat_id: "your_chat_id"
