@@ -1,5 +1,5 @@
 # predict.sol Version 1.0.1
-A Data Driven Platform for Automated Solana Trading
+A Data Driven Platform for Automated Solana Trading and Analysis
 
 ## Solana Trading Bot
 An automated trading bot that uses machine learning to predict Solana price movements and execute trades based on blockchain data analysis.
